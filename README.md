@@ -58,7 +58,7 @@ src/
 3. **Запустите приложение**:
 
    ```bash
-   mvn spring-boot:run
+   ./gradlew bootRun
    ```
 
 4. Приложение будет доступно по умолчанию на `http://localhost:8080/`.
