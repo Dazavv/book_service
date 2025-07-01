@@ -62,7 +62,7 @@ public class BookService {
         }
 
         Optional<Book> similarBook = bookRepository.getSameBook(book.getTitle(), book.getAuthor().getId(), id);
-        if (similarBook.isPresent()) throw new IllegalStateException("обновить информацию не удалось, book с title \"" + book.getTitle() + "\" и author - \"" + book.getAuthor().getName() + "\" уже добавлена" + similarBook+ book);
+        if (similarBook.isPresent()) throw new IllegalStateException("обновить информацию не удалось, book с title \"" + book.getTitle() + "\" и author - \"" + book.getAuthor().getName() + "\" уже добавлена");
 
         bookRepository.save(book);
     }
