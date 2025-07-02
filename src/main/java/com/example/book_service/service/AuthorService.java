@@ -20,14 +20,14 @@ public class AuthorService {
     }
 
     public Author addAuthor(Author author) {
-        Optional<Author> author1 = authorRepository.findByName(author.getName());
-        if (author1.isPresent()) throw new IllegalStateException("author с именем " + author.getName() + " уже существует");
+        Optional<Author> authorFromBD = authorRepository.findByName(author.getName());
+        if (authorFromBD.isPresent()) throw new IllegalStateException("author с именем " + author.getName() + " уже существует");
         return authorRepository.save(author);
     }
 
     public Author getAuthorById(Long id) {
-        Optional<Author> author1 = authorRepository.findById(id);
-        if (author1.isEmpty()) throw new IllegalStateException("author с id - " + id + " не существует");
-        return author1.get();
+        Optional<Author> author = authorRepository.findById(id);
+        if (author.isEmpty()) throw new IllegalStateException("author с id - " + id + " не существует");
+        return author.get();
     }
 }

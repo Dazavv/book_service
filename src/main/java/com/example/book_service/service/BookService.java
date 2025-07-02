@@ -29,10 +29,13 @@ public class BookService {
 
     public Book addBook(Book book) {
         Long authorId = book.getAuthor().getId();
-        Optional<Book> checkedBook = bookRepository.getBookByTitle(book.getTitle());
+
+        Optional<Book> checkedBook = bookRepository.getSameBook(book.getTitle(), authorId);
         Optional<Author> checkedAuthor = authorRepository.findById(authorId);
+
         if (checkedAuthor.isEmpty()) throw new IllegalStateException("book не удалось добавить т.к. author с id - " + authorId + " не добавлен");
-        if (checkedBook.isPresent() && checkedBook.get().getAuthor().getId().equals(book.getAuthor().getId())) throw new IllegalStateException("book с названием " + book.getTitle() + " уже добавлена");
+        if (checkedBook.isPresent()) throw new IllegalStateException("book с book с title \"" + book.getTitle() + "\" и author - \"" + checkedAuthor.get().getName() + "\" уже добавлена");
+
         book.setAuthor(checkedAuthor.get());
         return bookRepository.save(book);
     }

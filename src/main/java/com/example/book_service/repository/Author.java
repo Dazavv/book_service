@@ -21,7 +21,7 @@ public class Author {
     public Author() {
     }
 
-    public Author(Integer birthYear, String name) {
+    public Author(String name, Integer birthYear) {
         this.birthYear = birthYear;
         this.name = name;
     }
