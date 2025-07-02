@@ -20,8 +20,9 @@ src/
 │   │    ├── service/       // Бизнес-логика
 │   │    └── repository/    // Spring Data JPA / Сущности Book, Author
 │   └── resources/
-│      └──application.properties   // Настройки БД
-└── test/java/ // Unit-тесты
+│     └──application.properties   // Настройки БД
+└── test/
+     └──java/    // Unit-тесты
      
 
 
