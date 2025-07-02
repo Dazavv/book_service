@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Objects;
-
 @Getter
 @Setter
 @Entity
@@ -34,14 +32,4 @@ public class Book {
     public Book() {
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author=" + author +
-                ", year=" + year +
-                ", genre='" + genre + '\'' +
-                '}';
-    }
 }
