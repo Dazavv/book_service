@@ -15,13 +15,13 @@ REST-сервис для управления книгами, написанны
 ```
 src/
 ├── main/
-│   ├── java/com.example.book_service 
+│   ├── java/ 
 │   │    ├── controller/    // REST‑контроллеры
 │   │    ├── service/       // Бизнес-логика
 │   │    └── repository/    // Spring Data JPA / Сущности Book, Author
 │   └── resources/
 │      └──application.properties   // Настройки БД
-└── test/java/com.example.book_service // Unit-тесты
+└── test/java/ // Unit-тесты
      
 
 
